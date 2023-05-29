@@ -1,0 +1,27 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cambio-service
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka/
+  datasource:
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/cambio_service
+    username: postgres
+    password: reserva
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    url: jdbc:postgresql://localhost:5432/cambio_service
+    schemas: public
+    user: postgres
+    password: reserva
